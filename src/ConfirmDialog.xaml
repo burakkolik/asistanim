@@ -1,0 +1,26 @@
+<Window x:Class="Asistanim.ConfirmDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Width="440" SizeToContent="Height" WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner" Background="Transparent" AllowsTransparency="True"
+        FontFamily="Segoe UI Variable Text, Segoe UI">
+    <Border Margin="12" Background="#171923" BorderBrush="#2E3350" BorderThickness="1" CornerRadius="18" Padding="26">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="24" ShadowDepth="0" Opacity="0.6" Color="Black"/>
+        </Border.Effect>
+        <StackPanel>
+            <TextBlock Text="Kaydedilmemiş değişiklikler" Foreground="#ECEEF6" FontSize="18" FontWeight="Bold"/>
+            <TextBlock Text="Yaptığın değişiklikleri kaydetmeden çıkmak üzeresin. Ne yapmak istersin?" Foreground="#7C829B"
+                       FontSize="13.5" TextWrapping="Wrap" Margin="0,8,0,22"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Vazgeç" Style="{StaticResource PillButton}" HorizontalAlignment="Left" Click="Cancel_Click"/>
+                <Button Grid.Column="1" Content="Kaydetme" Style="{StaticResource PillButton}" Foreground="{StaticResource DangerBrush}"
+                        Margin="0,0,10,0" Click="Discard_Click"/>
+                <Button Grid.Column="2" Content="Kaydet ve çık" Style="{StaticResource AccentButton}" Click="Save_Click" IsDefault="True"/>
+            </Grid>
+        </StackPanel>
+    </Border>
+</Window>
